@@ -1,0 +1,2 @@
+0 coincidencias de logout/revoke/blacklist en BACKEND/src: no existe endpoint de cierre de sesion; el boton Cerrar sesion del frontend solo borra el token local.
+Fecha: 2026-10-16 16:25:00

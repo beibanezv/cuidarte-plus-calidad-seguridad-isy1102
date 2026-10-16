@@ -1,0 +1,6 @@
+Descarga de documento (GET /documentos/2) con rol medico
+HTTP: 200
+Tiempo de descarga: 37 ms (criterio: menos de 10000 ms)
+SHA256 archivo subido    : 9EC32E7E7AEA263EEF13744C4A8039DCD589B849A50CAB5FC2F3E51A2C410192
+SHA256 archivo descargado: 9EC32E7E7AEA263EEF13744C4A8039DCD589B849A50CAB5FC2F3E51A2C410192
+Integridad: IDENTICO (archivo integro)

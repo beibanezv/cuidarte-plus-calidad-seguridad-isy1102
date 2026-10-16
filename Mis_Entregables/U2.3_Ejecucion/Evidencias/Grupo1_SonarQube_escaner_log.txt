@@ -1,0 +1,122 @@
+19:27:45.759 INFO  Scanner configuration file: /opt/sonar-scanner/conf/sonar-scanner.properties
+19:27:45.764 INFO  Project root configuration file: /usr/src/sonar-project.properties
+19:27:45.781 INFO  SonarScanner CLI 8.1.0.6389
+19:27:45.785 INFO  Linux 6.12.76-linuxkit amd64
+19:27:46.709 INFO  Communicating with SonarQube Server 9.9.8.100196
+19:27:48.645 INFO  Load global settings
+19:27:48.797 INFO  Load global settings (done) | time=153ms
+19:27:48.798 INFO  Server id: 303924D4-AaFGJ8dz6QkxQM6JQiBs
+19:27:48.803 INFO  User cache: /opt/sonar-scanner/.sonar/cache
+19:27:48.806 INFO  Load/download plugins
+19:27:48.806 INFO  Load plugins index
+19:27:48.937 INFO  Load plugins index (done) | time=131ms
+19:27:55.080 INFO  Load/download plugins (done) | time=6274ms
+19:27:55.407 INFO  Process project properties
+19:27:55.421 INFO  Process project properties (done) | time=13ms
+19:27:55.425 INFO  Execute project builders
+19:27:55.427 INFO  Execute project builders (done) | time=1ms
+19:27:55.431 INFO  Project key: cuidarte-plus
+19:27:55.431 INFO  Base dir: /usr/src
+19:27:55.431 INFO  Working dir: /tmp/.scannerwork
+19:27:55.443 INFO  Load project settings for component key: 'cuidarte-plus'
+19:27:55.594 INFO  Load quality profiles
+19:27:55.824 INFO  Load quality profiles (done) | time=229ms
+19:27:55.837 INFO  Load active rules
+19:27:59.127 INFO  Load active rules (done) | time=3290ms
+19:27:59.130 INFO  Load analysis cache
+19:27:59.138 INFO  Load analysis cache (404) | time=8ms
+19:27:59.194 INFO  Load project repositories
+19:27:59.202 INFO  Load project repositories (done) | time=8ms
+19:27:59.237 INFO  Indexing files...
+19:27:59.237 INFO  Project configuration:
+19:27:59.238 INFO    Excluded sources: **/node_modules/**, **/dist/**, **/build/**, **/coverage/**, **/uploads/**, **/*.test.js, **/*.test.jsx, **/*.spec.js, **/*.spec.jsx
+19:27:59.238 INFO    Included tests: **/*.test.js, **/*.test.jsx, **/*.spec.js, **/*.spec.jsx
+19:27:59.238 INFO    Excluded sources for coverage: **/*.test.js, **/*.test.jsx, **/*.spec.js, **/*.spec.jsx, **/vite.config.js, **/tailwind.config.js, **/postcss.config.js
+19:28:00.900 INFO  63 files indexed
+19:28:00.900 INFO  63 files ignored because of inclusion/exclusion patterns
+19:28:00.900 INFO  0 files ignored because of scm ignore settings
+19:28:00.901 INFO  Quality profile for css: Sonar way
+19:28:00.901 INFO  Quality profile for js: Sonar way
+19:28:00.902 INFO  Quality profile for json: Sonar way
+19:28:00.902 INFO  ------------- Run sensors on module Cuidarte+
+19:28:00.970 INFO  Load metrics repository
+19:28:01.003 INFO  Load metrics repository (done) | time=33ms
+19:28:02.390 INFO  Sensor JaCoCo XML Report Importer [jacoco]
+19:28:02.397 INFO  'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+19:28:02.402 INFO  No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+19:28:02.402 INFO  Sensor JaCoCo XML Report Importer [jacoco] (done) | time=12ms
+19:28:02.402 INFO  Sensor IaC CloudFormation Sensor [iac]
+19:28:02.417 INFO  0 source files to be analyzed
+19:28:02.427 INFO  0/0 source files have been analyzed
+19:28:02.427 INFO  Sensor IaC CloudFormation Sensor [iac] (done) | time=25ms
+19:28:02.428 INFO  Sensor IaC Kubernetes Sensor [iac]
+19:28:02.434 INFO  0 source files to be analyzed
+19:28:02.440 INFO  0/0 source files have been analyzed
+19:28:02.441 INFO  Sensor IaC Kubernetes Sensor [iac] (done) | time=13ms
+19:28:02.441 INFO  Sensor JavaScript analysis [javascript]
+19:28:06.729 WARN  Node.js version 22 is not recommended, you might experience issues. Please use a recommended version of Node.js [16, 18]
+19:28:06.751 INFO  56 source files to be analyzed
+19:28:15.205 INFO  56/56 source files have been analyzed
+19:28:15.210 INFO  Hit the cache for 0 out of 56
+19:28:15.224 INFO  Miss the cache for 56 out of 56: ANALYSIS_MODE_INELIGIBLE [56/56]
+19:28:15.224 INFO  Sensor JavaScript analysis [javascript] (done) | time=12783ms
+19:28:15.224 INFO  Sensor TypeScript analysis [javascript]
+19:28:15.225 INFO  No input files found for analysis
+19:28:15.227 INFO  Hit the cache for 0 out of 0
+19:28:15.227 INFO  Miss the cache for 0 out of 0
+19:28:15.227 INFO  Sensor TypeScript analysis [javascript] (done) | time=3ms
+19:28:15.227 INFO  Sensor CSS Rules [javascript]
+19:28:15.560 INFO  2 source files to be analyzed
+19:28:16.305 INFO  2/2 source files have been analyzed
+19:28:16.306 INFO  Hit the cache for 0 out of 0
+19:28:16.306 INFO  Miss the cache for 0 out of 0
+19:28:16.306 INFO  Sensor CSS Rules [javascript] (done) | time=1079ms
+19:28:16.306 INFO  Sensor JavaScript/TypeScript Coverage [javascript]
+19:28:16.999 INFO  No LCOV files were found using BACKEND/coverage/lcov.info
+19:28:17.499 INFO  No LCOV files were found using FRONTEND/coverage/lcov.info
+19:28:17.500 WARN  No coverage information will be saved because all LCOV files cannot be found.
+19:28:17.500 INFO  Sensor JavaScript/TypeScript Coverage [javascript] (done) | time=1194ms
+19:28:17.500 INFO  Sensor CSS Metrics [javascript]
+19:28:17.536 INFO  Sensor CSS Metrics [javascript] (done) | time=36ms
+19:28:17.536 INFO  Sensor C# Project Type Information [csharp]
+19:28:17.539 INFO  Sensor C# Project Type Information [csharp] (done) | time=3ms
+19:28:17.539 INFO  Sensor C# Analysis Log [csharp]
+19:28:17.568 INFO  Sensor C# Analysis Log [csharp] (done) | time=29ms
+19:28:17.569 INFO  Sensor C# Properties [csharp]
+19:28:17.569 INFO  Sensor C# Properties [csharp] (done) | time=0ms
+19:28:17.569 INFO  Sensor HTML [web]
+19:28:17.572 INFO  Sensor HTML [web] (done) | time=3ms
+19:28:17.572 INFO  Sensor TextAndSecretsSensor [text]
+19:28:17.584 INFO  59 source files to be analyzed
+19:28:17.864 INFO  59/59 source files have been analyzed
+19:28:17.864 INFO  Sensor TextAndSecretsSensor [text] (done) | time=292ms
+19:28:17.864 INFO  Sensor VB.NET Project Type Information [vbnet]
+19:28:17.866 INFO  Sensor VB.NET Project Type Information [vbnet] (done) | time=2ms
+19:28:17.866 INFO  Sensor VB.NET Analysis Log [vbnet]
+19:28:17.881 INFO  Sensor VB.NET Analysis Log [vbnet] (done) | time=15ms
+19:28:17.881 INFO  Sensor VB.NET Properties [vbnet]
+19:28:17.881 INFO  Sensor VB.NET Properties [vbnet] (done) | time=0ms
+19:28:17.881 INFO  Sensor IaC Docker Sensor [iac]
+19:28:17.883 INFO  0 source files to be analyzed
+19:28:17.933 INFO  0/0 source files have been analyzed
+19:28:17.933 INFO  Sensor IaC Docker Sensor [iac] (done) | time=52ms
+19:28:17.937 INFO  ------------- Run sensors on project
+19:28:17.989 INFO  Sensor Analysis Warnings import [csharp]
+19:28:17.989 INFO  Sensor Analysis Warnings import [csharp] (done) | time=0ms
+19:28:17.990 INFO  Sensor Zero Coverage Sensor
+19:28:18.012 INFO  Sensor Zero Coverage Sensor (done) | time=23ms
+19:28:18.015 INFO  SCM Publisher SCM provider for this project is: git
+19:28:18.016 INFO  SCM Publisher 58 source files to be analyzed
+19:28:19.071 INFO  SCM Publisher 58/58 source files have been analyzed (done) | time=1053ms
+19:28:19.095 INFO  CPD Executor 6 files had no CPD blocks
+19:28:19.096 INFO  CPD Executor Calculating CPD for 50 files
+19:28:19.154 INFO  CPD Executor CPD calculation finished (done) | time=54ms
+19:28:19.562 INFO  Analysis report generated in 394ms, dir size=1.1 MB
+19:28:19.701 INFO  Analysis report compressed in 138ms, zip size=572.1 kB
+19:28:25.185 INFO  Analysis report uploaded in 5483ms
+19:28:25.200 INFO  ANALYSIS SUCCESSFUL, you can find the results at: http://host.docker.internal:9000/dashboard?id=cuidarte-plus
+19:28:25.200 INFO  Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+19:28:25.200 INFO  More about the report processing at http://host.docker.internal:9000/api/ce/task?id=AaFGL9yy6QkxQM6JQr7D
+19:28:26.659 INFO  Analysis total time: 31.499 s
+19:28:26.668 INFO  EXECUTION SUCCESS
+19:28:26.672 INFO  Total time: 40.914s

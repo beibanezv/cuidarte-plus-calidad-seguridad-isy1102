@@ -1,0 +1,28 @@
+RESUMEN SONARQUBE - Cuidarte+ (Grupo 1) - 16-10-2026
+Servidor: SonarQube Community 9.9.8 | Proyecto: cuidarte-plus | Primer analisis (linea base)
+
+METRICAS:
+  ncloc = 10133
+  sqale_rating = 1.0
+  coverage = 0.0
+  sqale_index = 465
+  duplicated_lines_density = 14.5
+  code_smells = 72
+  security_rating = 1.0
+  reliability_rating = 3.0
+  vulnerabilities = 0
+  security_hotspots = 3
+  bugs = 1
+
+ISSUES: total 73 | CRITICAL=8, MAJOR=32, MINOR=32, INFO=1 | CODE_SMELL=72, BUG=1
+
+CRITICOS Y BUG:
+  [MAJOR/BUG] css:S4649 en FRONTEND/src/index.css L6: Unexpected missing generic font family
+  [CRITICAL/CODE_SMELL] javascript:S3776 en FRONTEND/src/pages/usuarios/UsuarioForm.jsx L173: Refactor this function to reduce its Cognitive Complexity from 39 to the 15 allowed.
+  [CRITICAL/CODE_SMELL] javascript:S3776 en FRONTEND/src/pages/examenes/ExamenForm.jsx L47: Refactor this function to reduce its Cognitive Complexity from 33 to the 15 allowed.
+  [CRITICAL/CODE_SMELL] javascript:S3776 en FRONTEND/src/pages/pacientes/PacienteForm.jsx L21: Refactor this function to reduce its Cognitive Complexity from 22 to the 15 allowed.
+  [CRITICAL/CODE_SMELL] javascript:S3776 en BACKEND/src/routes/users.js L437: Refactor this function to reduce its Cognitive Complexity from 24 to the 15 allowed.
+  [CRITICAL/CODE_SMELL] javascript:S3776 en BACKEND/src/routes/pacientes.js L48: Refactor this function to reduce its Cognitive Complexity from 22 to the 15 allowed.
+  [CRITICAL/CODE_SMELL] javascript:S3776 en BACKEND/src/routes/auth.js L71: Refactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.
+  [CRITICAL/CODE_SMELL] javascript:S3776 en BACKEND/src/routes/users.js L283: Refactor this function to reduce its Cognitive Complexity from 27 to the 15 allowed.
+  [CRITICAL/CODE_SMELL] javascript:S3776 en BACKEND/src/routes/pacientes.js L276: Refactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.

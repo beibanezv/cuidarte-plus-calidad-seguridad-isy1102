@@ -1,0 +1,24 @@
+RESUMEN EJECUCION CP005-CP008 - Cuidarte+ (Grupo 1) - 2026-10-16 16:25:00
+Metodo: peticiones reales a la API con curl; evidencia en los archivos adjuntos.
+
+CP005 login medico -> HTTP 200 (esperado 200). JWT payload: {"usuarioId":"2","nombreUsuario":"medico","rolId":"2","rolNombre":"medico","pacienteId":null,"roles":[{"id":"2","nombre":"medico"}],"iat":1792178701,"exp":1792185901}
+CP005 uso del token con rol medico (GET /pacientes) -> HTTP 200; registros devueltos: 20
+CP005 RESULTADO: PASS (200 + JWT valido con rol medico)
+
+CP006 reuso del token tras cerrar sesion -> HTTP 200 (esperado 401)
+CP006 RESULTADO: FAIL - el token sigue vigente (confirma hallazgo H-02: no hay revocacion de sesion)
+
+Preparacion CP007/CP008: examen creado como medico -> HTTP 201; id=2; demora 5043 ms
+CP007 login paciente -> HTTP 200
+CP007 paciente PUT /examenes/2 -> HTTP 403 (esperado 403); demora 5036 ms
+CP007 RESULTADO: PASS (403 Forbidden; la BD confirma que no hubo cambios)
+
+CP008 subida de documento (medico) -> HTTP 201; id=2; demora 5050 ms
+CP008 RESULTADO: PASS (HTTP 200, integridad SHA256 identica, 37 ms)
+
+Contenedores al cierre:
+cuidarteplus-frontend-ev | Up 4 minutes
+cuidarteplus-backend-ev | Up 4 minutes
+cuidarteplus-postgres-ev | Up 4 minutes (healthy)
+cuidarteplus-sonarqube | Up 6 minutes
+cuidarteplus-sonar-db | Up 6 minutes (healthy)
