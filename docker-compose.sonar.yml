@@ -1,0 +1,62 @@
+# SonarQube on-demand para Cuidarte+ (ISY1102)
+# IMPORTANTE: usar siempre -p para aislarlo del .env principal (COMPOSE_PROJECT_NAME=cuidarteplus-ev).
+# Uso:
+#   docker compose -p cuidarteplus-sonar -f docker-compose.sonar.yml up -d
+#   docker compose -p cuidarteplus-sonar -f docker-compose.sonar.yml logs -f sonarqube  # esperar ~2-3 min
+#   # http://localhost:9000  admin/admin -> cambiar pass -> crear token
+#   # escanear (ver sonar-project.properties):
+#   docker run --rm -v "${PWD}:/usr/src" sonarsource/sonar-scanner-cli -Dsonar.host.url=http://host.docker.internal:9000 -Dsonar.token=<TOKEN>
+#   docker compose -p cuidarteplus-sonar -f docker-compose.sonar.yml down        # apaga y libera RAM
+#   docker compose -p cuidarteplus-sonar -f docker-compose.sonar.yml down -v     # borra datos SonarQube (limpio)
+# No se auto-levanta con el compose principal.
+name: cuidarteplus-sonar
+
+services:
+  sonarqube:
+    image: sonarqube:lts-community
+    container_name: cuidarteplus-sonarqube
+    restart: unless-stopped
+    ports:
+      - "${SONAR_PORT:-9000}:9000"
+    environment:
+      - SONAR_JDBC_URL=jdbc:postgresql://sonar-db:5432/${SONAR_DB_NAME:-sonar}
+      - SONAR_JDBC_USERNAME=${SONAR_DB_USER:-sonar}
+      - SONAR_JDBC_PASSWORD=${SONAR_DB_PASSWORD:-sonar}
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    depends_on:
+      sonar-db:
+        condition: service_healthy
+    networks:
+      - sonarnet
+
+  sonar-db:
+    image: postgres:15-alpine
+    container_name: cuidarteplus-sonar-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=${SONAR_DB_USER:-sonar}
+      - POSTGRES_PASSWORD=${SONAR_DB_PASSWORD:-sonar}
+      - POSTGRES_DB=${SONAR_DB_NAME:-sonar}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - sonar_postgresql_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${SONAR_DB_USER:-sonar} -d ${SONAR_DB_NAME:-sonar}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - sonarnet
+
+networks:
+  sonarnet:
+    driver: bridge
+
+volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  sonar_postgresql_data:
